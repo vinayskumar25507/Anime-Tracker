@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniFocus Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">AniFocus</div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search your list..." onkeyup="searchLocal()">
+        </div>
+    </header>
+
+    <section class="admin-panel">
+        <h3>Admin: Add New Anime</h3>
+        <div class="admin-form">
+            <input type="text" id="adminTitle" placeholder="Anime Title (e.g. One Piece)">
+            <input type="text" id="adminImg" placeholder="Image URL (Copy from Google)">
+            <input type="number" id="adminTotal" placeholder="Total Episodes">
+            
+            <select id="adminStatus">
+                <option value="Watching">Watching</option>
+                <option value="Completed">Completed</option>
+                <option value="Plan to Watch">Plan to Watch</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Dropped">Dropped</option>
+            </select>
+            
+            <button onclick="addAnime()" class="btn-add">Add Anime</button>
+        </div>
+    </section>
+
+    <nav class="tab-container">
+        <button class="tab-btn active" onclick="filterAnime('All')">All</button>
+        <button class="tab-btn" onclick="filterAnime('Watching')">Watching</button>
+        <button class="tab-btn" onclick="filterAnime('Completed')">Completed</button>
+        <button class="tab-btn" onclick="filterAnime('Plan to Watch')">Plan to Watch</button>
+        <button class="tab-btn" onclick="filterAnime('On Hold')">On Hold</button>
+        <button class="tab-btn" onclick="filterAnime('Dropped')">Dropped</button>
+    </nav>
+
+    <main>
+        <div class="anime-grid" id="animeGrid">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
